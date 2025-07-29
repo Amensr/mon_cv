@@ -1,0 +1,44 @@
+/* Masquer les éléments non essentiels à l'impression */
+header, nav, footer, .no-print {
+    display: none !important;
+}
+
+/* Adapter la largeur de la page pour l'impression */
+body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt;
+    margin: 0;
+    padding: 0;
+}
+
+/* S'assurer que le contenu principal prend toute la largeur */
+.main-content, .container, .content {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+/* Supprimer les liens visuels */
+a:after {
+    content: "" !important;
+}
+
+/* Éviter les coupures de page gênantes */
+h1, h2, h3, h4, h5, h6, p, table, img {
+    page-break-inside: avoid;
+}
+
+/* Ajuster les images */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+    page-break-inside: avoid;
+}
+
+/* Cacher les boutons d'action */
+button, .btn, .action, .print-hide {
+    display: none !important;
+}

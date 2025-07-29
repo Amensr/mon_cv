@@ -1,0 +1,79 @@
+:root {
+    --primary-color: #00ff00;
+    --bg-color: #111;
+    --text-color: #0f0;
+    --accent-color: #ff00ff;
+}
+
+.cybersecurity-cv {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier New', monospace;
+    padding: 2rem;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cybersecurity-cv::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        var(--accent-color), 
+        var(--primary-color), 
+        var(--accent-color));
+    animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); }
+}
+
+.hacker-effect {
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+.hacker-effect::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: var(--primary-color);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: hacker 3s steps(30) infinite alternate;
+}
+
+@keyframes hacker {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+.terminal-line {
+    margin: 1rem 0;
+}
+
+.prompt {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+}
+
+.command {
+    color: var(--primary-color);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}

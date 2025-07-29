@@ -1,0 +1,218 @@
+.cyber-cv-interactive {
+    --primary-color: #00ff41;
+    --secondary-color: #008f11;
+    --bg-color: #0d0208;
+    --text-color: #00ff41;
+    --accent-color: #ff0090;
+    
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier New', monospace;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-terminal {
+    position: relative;
+    z-index: 2;
+}
+
+.terminal-header {
+    background: linear-gradient(to right, #111, #333);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.terminal-buttons span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.terminal-buttons .close { background: #ff5f56; }
+.terminal-buttons .minimize { background: #ffbd2e; }
+.terminal-buttons .maximize { background: #27c93f; }
+
+.terminal-body {
+    padding: 1.5rem;
+    min-height: 500px;
+    position: relative;
+}
+
+.terminal-line {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+}
+
+.command {
+    color: var(--primary-color);
+    animation: blink 1s step-end infinite;
+}
+
+.terminal-output {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-line {
+    margin-bottom: 0.5rem;
+    display: flex;
+}
+
+.info-label {
+    color: var(--accent-color);
+    min-width: 120px;
+}
+
+.info-value {
+    color: var(--text-color);
+    border-bottom: 1px dashed var(--primary-color);
+    flex: 1;
+    padding: 0 0.2rem;
+}
+
+.skill-bubbles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.skill-bubble {
+    background: rgba(0, 255, 65, 0.1);
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.skill-bubble:hover {
+    background: rgba(0, 255, 65, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 255, 65, 0.2);
+}
+
+.skill-level {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 0 0 20px 20px;
+}
+
+.code-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.code-line {
+    position: absolute;
+    color: rgba(0, 255, 65, 0.5);
+    font-size: 0.9rem;
+    animation: codeFall linear infinite;
+}
+
+@keyframes codeFall {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
+
+.virus-scan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
+    z-index: 10;
+}
+
+.hack-mode .code-rain {
+    opacity: 0.3;
+}
+
+.hack-mode .terminal-body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 65, 0.1),
+        rgba(0, 255, 65, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cyber-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-top: 1px solid var(--primary-color);
+}
+
+.cyber-btn {
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.cyber-btn:hover {
+    background: rgba(0, 255, 65, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.cyber-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 65, 0.4),
+        transparent
+    );
+    transition: all 0.5s ease;
+}
+
+.cyber-btn:hover::before {
+    left: 100%;
+}
