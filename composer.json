@@ -1,0 +1,13 @@
+{
+    "name": "ton-utilisateur/mon-projet-php",
+    "description": "Description de ton projet",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

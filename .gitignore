@@ -1,0 +1,14 @@
+# Fichiers temporaires
+*.tmp
+*.bak
+*.swp
+
+# Logs
+logs/
+*.log
+
+# Fichiers de cache
+/cache/
+
+# Fichiers de configuration sensibles
+config.php
