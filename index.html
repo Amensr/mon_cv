@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenue sur CV Creator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            font-family: 'Montserrat', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .welcome-container {
+            background: rgba(255,255,255,0.95);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            padding: 48px 32px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        .welcome-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #2575fc;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            animation: popIn 1s;
+        }
+        .welcome-desc {
+            font-size: 1.2rem;
+            color: #444;
+            margin-bottom: 32px;
+            animation: fadeIn 2s;
+        }
+        .welcome-btn {
+            display: inline-block;
+            padding: 14px 36px;
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(106,17,203,0.15);
+            transition: background 0.3s, transform 0.2s;
+            cursor: pointer;
+            animation: bounceIn 1.5s;
+        }
+        .welcome-btn:hover {
+            background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+            transform: translateY(-3px) scale(1.04);
+        }
+        /* Animations */
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-60px);}
+            100% { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.7);}
+            100% { opacity: 1; transform: scale(1);}
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0;}
+            100% { opacity: 1;}
+        }
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.8);}
+            60% { opacity: 1; transform: scale(1.05);}
+            100% { opacity: 1; transform: scale(1);}
+        }
+        /* Background animated circles */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.18;
+            z-index: 1;
+            animation: float 8s infinite alternate;
+        }
+        .circle1 { width: 180px; height: 180px; background: #6a11cb; top: 10%; left: 5%; animation-delay: 0s;}
+        .circle2 { width: 120px; height: 120px; background: #2575fc; bottom: 15%; right: 8%; animation-delay: 2s;}
+        .circle3 { width: 90px; height: 90px; background: #6a11cb; top: 70%; left: 80%; animation-delay: 4s;}
+        @keyframes float {
+            0% { transform: translateY(0) scale(1);}
+            100% { transform: translateY(-30px) scale(1.08);}
+        }
+        @media (max-width: 600px) {
+            .welcome-container { padding: 28px 8px; }
+            .welcome-title { font-size: 2rem; }
+            .welcome-desc { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+    <div class="welcome-container">
+        <div class="welcome-title">Bienvenue sur CV Creator !</div>
+        <div class="welcome-desc">
+            Créez, personnalisez et partagez vos CV et cartes d'invitation en toute simplicité.<br>
+            Profitez d'une expérience moderne, intuitive et rapide.
+        </div>
+        <a href="login.php" class="welcome-btn">Commencer</a>
+    </div>
+</body>
+</html>
